@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2><a href="{% url 'kegs:beer_list' %}">Beers</a></h2>
+
+<ul>
+    {% for beer in object_list %}
+    <li>{{ beer.name }} ({{ beer.style }}, {{ beer.abv }} % ABV, {{ beer.bitterness }} IBU)<br/>
+    <a href="{% url 'kegs:beer_edit' beer.id %}">edit</a>
+    <a href="{% url 'kegs:beer_delete' beer.id %}">delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'kegs:beer_new' %}">Add a new beer</a>
+
+{% endblock %}

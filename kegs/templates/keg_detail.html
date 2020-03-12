@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block page_content %}
+        <div class="mw6 center pa3 sans-serif">
+            <h1 class="mb4">Keg: {{ kegs.number | linebreaks }}</h1>
+            <header class="b mb2">Status and date updated: {{ kegs.status }} {{ kegs.dateupdated }} </header>
+        {% for beer in beers %}
+            <div class="pa2 mb3 striped--near-white">
+                <div class="pl2">
+                    <p class="mb2">Name: {{ beer.name }}</p>
+                    <p class="mb2">Style: {{ beer.style }}</p>
+                    <p class="mb2">ABV and bitterness: {{ beer.abv }} %, {{ beer.bitterness }} IBU</p>
+                    <p class="mb2">Date brewed: {{ beer.datebrewed }}</p>
+                    <p class="mb2">Description: {{ beer.description }}</p>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<a href="{% url 'kegs:beer_list' %}">List of Beers</a><br>
+<a href="{% url 'kegs:keg_list' %}">List of Kegs</a><br>    
+
+{% endblock %}
